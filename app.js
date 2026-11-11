@@ -104,7 +104,7 @@ function renderCalendar(){
     if(status==="completed")button.classList.add("completed");if(status==="missed")button.classList.add("missed");
     if(key===localToday())button.classList.add("today");if(key===selectedDate)button.classList.add("selected");
     if(!isWithinChallenge(key))button.classList.add("outside-challenge");
-    button.disabled=key>localToday()||!isWithinChallenge(key);
+    
     button.setAttribute("aria-label",formatDateLong(key)+(status?", "+status:""));button.setAttribute("aria-pressed",String(key===selectedDate));
     button.addEventListener("click",()=>{selectedDate=key;renderAll()});elements.calendarGrid.appendChild(button);
   }
