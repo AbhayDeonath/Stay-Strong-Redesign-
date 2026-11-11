@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f1ebdd">
+  <meta name="description" content="A calm, thoughtful space to track consistency and personal progress.">
+  <title>Stay Stronger — One day at a time</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-shell" id="top">
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="Stay Stronger home">
+        <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span>stay stronger</span>
+      </a>
+      <nav class="top-nav" aria-label="Main navigation">
+        <a href="#journey">Journey</a><a href="#milestones">Milestones</a><a href="#settings">Settings</a>
+      </nav>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark theme"><span id="themeIcon" aria-hidden="true">◐</span><span class="theme-label">Appearance</span></button>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="eyebrow-line"></span> A PERSONAL PRACTICE</p>
+          <h1>Small steps.<br><span>Lasting strength.</span></h1>
+          <p class="hero-description">Build trust with yourself, one honest day at a time. Progress is not about perfection. It is about returning.</p>
+          <a class="text-link" href="#checkin">Make today's mark <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
+          <div class="art-disc"><span class="disc-number">01</span><span class="disc-caption">begin<br>again</span></div>
+          <svg class="art-line" viewBox="0 0 360 250" fill="none"><path d="M9 192C60 32 102 237 156 119S245 12 350 65" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M20 220C82 90 110 258 184 151S282 66 350 104" stroke="currentColor" stroke-width="1" stroke-linecap="round" opacity=".55"/></svg>
+          <span class="art-note">THE WORK IS<br>IN THE RETURN</span>
+        </div>
+        <div class="hero-bottom"><span>01 / CONSISTENCY</span><span>YOUR OWN PACE, YOUR OWN PATH</span></div>
+      </section>
+
+      <section class="stats-grid" aria-label="Your statistics">
+        <article class="stat-card stat-featured"><div class="stat-top"><span class="stat-index">01</span><span class="stat-symbol" aria-hidden="true">↗</span></div><p class="stat-label">Current streak</p><div class="stat-value"><span id="currentStreak">0</span><small>days</small></div><p class="stat-foot">Keep the promise going</p></article>
+        <article class="stat-card"><div class="stat-top"><span class="stat-index">02</span><span class="stat-symbol" aria-hidden="true">✳</span></div><p class="stat-label">Longest streak</p><div class="stat-value"><span id="longestStreak">0</span><small>days</small></div><p class="stat-foot">Your personal best</p></article>
+        <article class="stat-card"><div class="stat-top"><span class="stat-index">03</span><span class="stat-symbol" aria-hidden="true">✓</span></div><p class="stat-label">Days completed</p><div class="stat-value"><span id="totalCompleted">0</span><small>days</small></div><p class="stat-foot">Every effort counts</p></article>
+      </section>
+
+      <section class="progress-panel">
+        <div class="section-kicker">THE BIGGER PICTURE <span>02</span></div>
+        <div class="progress-head"><div><h2>Look how far<br>you have come.</h2><p class="muted">Consistency grows quietly, then becomes visible.</p></div><div class="progress-number" id="progressPercent">0%</div></div>
+        <div class="progress-track" role="progressbar" aria-label="Challenge completion" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progressTrack"><div class="progress-fill" id="progressBar"></div></div>
+        <div class="progress-meta"><span id="progressText">0 days completed</span><span id="challengeDuration">30-day challenge</span></div>
+      </section>
+
+      <section class="journey-section" id="journey">
+        <div class="section-heading"><div><p class="eyebrow dark-eyebrow">YOUR RECORD</p><h2>The journey, day by day.</h2></div><p class="section-aside">A calendar of effort,<br>not a measure of worth.</p></div>
+        <div class="journey-grid">
+          <article class="surface calendar-panel">
+            <div class="panel-title"><div><span class="panel-kicker">YOUR JOURNEY</span><h3>Challenge calendar</h3></div><span class="panel-ornament" aria-hidden="true">✳</span></div>
+            <div class="calendar-toolbar"><button id="prevMonth" class="month-nav" type="button" aria-label="Previous month">←</button><input type="month" id="monthPicker" aria-label="Select calendar month"><button id="nextMonth" class="month-nav" type="button" aria-label="Next month">→</button></div>
+            <div class="calendar-weekdays" aria-hidden="true"><span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span></div>
+            <div id="calendarGrid" class="calendar-grid"></div>
+            <div class="calendar-legend"><span><i class="legend-dot completed-dot"></i>Completed</span><span><i class="legend-dot missed-dot"></i>Missed</span><span><i class="legend-dot today-dot"></i>Today</span></div>
+          </article>
+          <article class="surface checkin-panel" id="checkin">
+            <div class="panel-title"><div><span class="panel-kicker">DAILY CHECK-IN</span><h3>Make your mark.</h3></div><span class="checkin-number">03</span></div>
+            <div class="selected-date-card"><span class="selected-date-label">SELECTED DAY</span><h4 id="selectedDateTitle">November 1, 2026</h4><p id="selectedDateSubtitle">Sunday</p></div>
+            <div id="statusMessage" class="status-message" role="status">No status recorded for this day.</div>
+            <div class="checkin-actions"><button id="completeBtn" class="action-button complete-button" type="button"><span aria-hidden="true">✓</span> I kept my promise</button><button id="missedBtn" class="action-button missed-button" type="button"><span aria-hidden="true">×</span> I missed this day</button><button id="clearBtn" class="clear-button" type="button">Clear this day's status</button></div>
+            <p id="checkinNote" class="checkin-note">Select a date in the calendar to record your progress.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="milestones-section" id="milestones">
+        <div class="section-heading"><div><p class="eyebrow dark-eyebrow">MILESTONES <span>04</span></p><h2>Proof of your progress.</h2></div><span class="achievement-count" id="achievementCount">0 unlocked</span></div>
+        <div id="achievementsGrid" class="achievements-grid"></div>
+      </section>
+
+      <section class="settings-section surface" id="settings">
+        <div class="section-heading settings-heading"><div><p class="eyebrow dark-eyebrow">MAKE IT YOURS <span>05</span></p><h2>Challenge settings.</h2></div><span class="settings-mark" aria-hidden="true">⌘</span></div>
+        <div class="settings-details"><div class="setting-detail"><span>Challenge begins</span><strong id="challengeStartDisplay">November 1, 2026</strong></div><div class="setting-detail"><span>Current end date</span><strong id="currentEndDisplay">November 30, 2026</strong></div></div>
+        <form id="settingsForm" class="settings-form"><label for="newEndDate">Choose a new end date</label><div class="settings-input-row"><input type="date" id="newEndDate" required><button type="submit" class="save-button">Save changes <span aria-hidden="true">↗</span></button></div><p class="settings-note">Extend or shorten your challenge whenever you need. The end date cannot be earlier than the start date.</p></form>
+        <div class="reset-row"><div><h3>Begin again, if you need to.</h3><p>Reset all check-ins, streaks, achievements and preferences. This cannot be undone.</p></div><button id="fullResetBtn" class="reset-button" type="button">Reset challenge</button></div>
+      </section>
+    </main>
+
+    <footer class="footer"><a class="brand footer-brand" href="#top"><span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span><span>stay stronger</span></a><p>One day at a time. Always.</p><span>YOUR PROGRESS IS SAVED ON THIS DEVICE</span></footer>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
